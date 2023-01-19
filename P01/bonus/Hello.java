@@ -13,6 +13,7 @@ public class Hello
         String name = in.nextLine();
         System.out.print("Hello, ");
         System.out.print(name);
+        System.out.print("\n");
              
 	}
 	
