@@ -10,8 +10,8 @@
 	
 	          pets[0] =  new Pet("Pony",8,Type.Horse);
 	          pets[1] = new Pet ("Sonic",3,Type.Hedgehog);
-	          pets[2] = new Pet ("Snake",10,Type.Snake);
-	          pets[3] = new Pet ("Bunny", 5, Type.Bunny);
+	          pets[2] = new Pet ("Orochimaru",10,Type.Snake);
+	          pets[3] = new Pet ("Benito", 5, Type.Bunny);
 	
 	  
 	  for(Pet p : pets)

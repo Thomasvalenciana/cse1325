@@ -17,7 +17,7 @@ public Pet(String name, double age, Type type){
  @Override 
  public String toString(){
    
-  return name + " is  a " +  type  + " they are  "   +  age  +  "  old  " ;
+  return name + " is  a " +  type  + " they are  "   +  age  +  " years old  " ;
  }
  
  
