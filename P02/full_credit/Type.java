@@ -1,7 +1,5 @@
 public enum Type
 {
-  HORSE,
-   HEDGEHOG,
-   SNAKE,
-   BUNNY
+  Horse, Hedgehog,Snake,Bunny
+  
  }
