@@ -1,7 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
+import java.util.Arrays;
 
 public class Quizzer
 
@@ -21,8 +21,15 @@ try{
 	   
 	   
 	   double r = quiz.takeQuiz();
-	  System.out.print(r*100);
 	   
+	  System.out.println(r*100);
+	  if( r==1)
+	  {
+	     System.out.print("  Great you made 100!");
+	  }
+	  else{
+	  System.out.println("   It's okay you'll get it next time!");
+	  }
     } 
     }
    catch(IllegalArgumentException e)

@@ -14,7 +14,9 @@ public  class Question
  public Question( String question, ArrayList<String>answers, int rightAnswer)
  {
 	 this.question= question;
-	 this.answers = new ArrayList<String>();
+	 
+	 this.answers = new ArrayList<>();
+	 
 	 this.rightAnswer= rightAnswer;
 
 	 
@@ -44,7 +46,8 @@ public  class Question
      @Override
      public String toString()
      {
-	      return  questionNumber + "." + question + answers ;
+	      return  questionNumber + "." + question +   
+	      answers ;
      }
       
 	 

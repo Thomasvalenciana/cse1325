@@ -17,18 +17,22 @@ public class Quiz
   
   private void loadQuiz()
   {  
-  
+      
       ArrayList<String> options1= new ArrayList<String>();
   		
-  		options2.add("DC");
-  		options2.add("Austin");
-	      
-	   //String question1 = "Pizza  burg";
-	  // options1.add(question1);
+  		
+	   
 	   questions = new ArrayList<Question>();
-	   Question q1= new Question("what is your favorite food",options1,1);
+	   Question q1= new Question(" How much blood does an adults body approximately contain?\n 1) 1.5liters\n 2) 3.5Liter\n 3) 5.5Liters\n 4) 6.5Liters)",options1,1);
        questions.add(q1);
-       questions.add(new Question("what is the capitol of Austin",options2,2));
+       
+      
+       
+       
+       ArrayList<String> options2= new ArrayList<String>();
+       questions.add(new Question(" What year was Microsoft founded?\n 1) 1984\n 2) 1975 \n 3) 1965\n 4) 1957)",options2,2));
+       
+	      
     
   }
    
