@@ -29,8 +29,10 @@ public abstract class Product{
  @Override
  public String toString()
  {
-    
-  return  name+"  "+ "($"+cost+")"+ " " +   "         $" +   price();
+   
+   
+  
+  return String.format("%-8s($%.2f) \t\t $%.2f",name,cost,price());
   }
  
 }
