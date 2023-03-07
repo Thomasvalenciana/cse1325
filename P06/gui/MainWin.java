@@ -27,7 +27,13 @@ import java.awt.Font;                // rich text in a JLabel or similar widget
 import java.awt.image.BufferedImage; // holds an image loaded from a file
 
 public class MainWin extends JFrame {
-    public MainWin(String title) {
+    private Store store;
+    private JLabel display;
+   
+
+    public MainWin(String title) 
+    {
+
         super(title);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 200);
@@ -38,32 +44,60 @@ public class MainWin extends JFrame {
 
         JMenuBar menubar = new JMenuBar();
         
-        JMenu     file       = new JMenu("File");
-        JMenuItem anew       = new JMenuItem("New Game");
-        JMenuItem quit       = new JMenuItem("Quit");
-        JMenu     help       = new JMenu("Help");
-        JMenuItem rules      = new JMenuItem("Rules");
-        JMenuItem about      = new JMenuItem("About");
+        JMenu     file      = new JMenu("File");
+        JMenu     insert    = new JMenu("Insert");
+        JMenu     view       = new JMenu("Quit");
+        JMenu     help      = new JMenu("Help");
+        JMenuItem quit      = new JMenuItem("Quit");
+        JMenuItem Customer  = new JMenuItem("Customer");
+        JMenuItem  Option   = new JMenuItem("Option");
+        JMenuItem Computer  = new JMenuItem("Computer");
+       
+        JMenuItem about  = new JMenuItem("About");
         
-        anew .addActionListener(event -> onNewGameClick());
-        quit .addActionListener(event -> onQuitClick());
-        rules.addActionListener(event -> onRulesClick());
-        about.addActionListener(event -> onAboutClick());
+       Customer .addActionListener(event -> onInsertCustomerClick());
+       Option.addActionListener(event -> onInsertOptionClick());
+       Computer.addActionListener(event -> onInsertComputerClick());
+       about.addActionListener(event -> onAboutClick());
+       
+       
+       Customer.addActionListener(event -> onViewClick(Record.CUSTOMER));
+       Option.addActionListener(event -> onViewClick(Record.OPTION));
+       Computer.addActionListener(event -> onViewClick(Record.COMPUTER));
+       
+       quit .addActionListener(event -> onQuitClick());
+       
+       
+       
 
         
-        file.add(anew);
         file.add(quit);
-        help.add(rules);
         help.add(about);
+         
+        insert.add(Customer);
+        insert.add(Option);
+        insert.add(Computer);
+        
+        
+        view.add(Customer);
+        view.add(Option);
+        view.add(Computer);
+        
+        
         
         menubar.add(file);
         menubar.add(help);
+        menubar.add(view);
+        menubar.add(insert);
         setJMenuBar(menubar);
+        
+        
+        
         
         // ///////////// //////////////////////////////////////////////////////////
         // T O O L B A R
         // Add a toolbar to the PAGE_START region below the menu
-        JToolBar toolbar = new JToolBar("Nim Controls");
+       JToolBar toolbar = new JToolBar("Nim Controls");
 
         // Add a New Game stock icon
         JButton anewB  = new JButton(UIManager.getIcon("FileView.fileIcon"));
@@ -116,19 +150,22 @@ public class MainWin extends JFrame {
           quitB.setBorder(null);
           toolbar.add(quitB);
           quitB.addActionListener(event -> onQuitClick());
-        toolbar.addSeparator();
-
-        getContentPane().add(toolbar, BorderLayout.PAGE_START);
+         toolbar.addSeparator();
+          getContentPane().add(toolbar, BorderLayout.PAGE_START);
+     
+       
+        
+        
         
         
         // /////////////////////////// ////////////////////////////////////////////
-        // S T I C K S   D I S P L A Y
+        // C O M P U T E R   D I S P L A Y
         // Provide a text entry box to show the remaining sticks
-        sticks = new JLabel();
-        sticks.setFont(new Font("SansSerif", Font.BOLD, 18));
-        add(sticks, BorderLayout.CENTER);
+        display = new JLabel();
+        display.setFont(new Font("SansSerif", Font.BOLD, 18));
+        add(store, BorderLayout.CENTER);
 
-        // S T A T U S   B A R   D I S P L A Y ////////////////////////////////////
+       // S T A T U S   B A R   D I S P L A Y ////////////////////////////////////
         // Provide a status bar for game messages
         msg = new JLabel();
         add(msg, BorderLayout.PAGE_END);
@@ -137,39 +174,64 @@ public class MainWin extends JFrame {
         setVisible(true);
         
         // Start a new game
-        onNewGameClick();
-    }
+       // onNewGameClick();
+    
+    protected void onInsertCustomer()
+   {      
+       JOptionPane.showMessageDialog(null, "Enter name");    // Reset to default font
+   }
+      protected void onInsertComputerClick() 
+     {
+        String name = name.getText().trim();
+        
+        
+        String d = description.getText().trim();
+    
+       double price = Double.parseDouble(price.getText().trim());
+       
+       Computer computer = new Computer(name, d, price);
+       store.add(computer);
+       
+       computersListView.getItems().add(computer);
+       name.clear();
+   
+       description.clear();
+       price.clear();
+      }
     
     // Listeners
     
-    protected void onNewGameClick() {         // Create a new game
-        nim = new Nim();
-        setSticks();
-        msg.setFont(new JLabel().getFont());    // Reset to default font
-    }
+  protected void onInsertCustomer()
+   {      
+       JOptionPane.showMessageDialog(null, "Enter name");    
+   }
+   
+   protected void onInsertOptionClick()
+   {
+         
+   }
+   
     
-    protected void onButtonClick(int button) {  // Select 1, 2, or 3 sticks from pile
-        try {
-            // Catch the "impossible" out of sticks exception
-            nim.takeSticks(button);
-            setSticks();
-        } catch(Exception e) {
-            sticks.setText("FAIL: " + e.getMessage() + ", start new game");
-        }
-    }
-            
-    protected void onComputerPlayerClick() {   // Enable / disable computer player
-        setSticks();
-        // Java Swing requires action to visually indicate enabled / disabled button
-        computerPlayer.setBorder(computerPlayer.isSelected() ? BorderFactory.createLineBorder(Color.black) : null);
-    }
-    protected void onRulesClick() {             // Show the rules
-        String s = "The Rules of Nim\n\nCopyright 2017-2023 by George F. Rice - CC BY 4.0\n\n" +
-            "The two players alternate taking 1 to 3 sticks from the pile.\n" +
-            "The goal is to force your opponent to take the last stick (called misère rules).\n" +
-            "If the computer button is up, it's a two player game. If down, the computer is always Player 2.)";
-        JOptionPane.showMessageDialog(this, s, "The Rules of Nim", JOptionPane.PLAIN_MESSAGE);
-    }
+  protected void onViewClick(Record record) 
+  {
+    switch(record)
+    
+     {
+        case CUSTOMER:
+            break;
+        case OPTION:
+            break;
+        case COMPUTER:
+            break;
+        case ORDER:;
+            break;
+        default:
+            break;
+     }
+  } 
+    protected void onQuitClick() {System.exit(0);}   // Exit the game
+
+ 
     protected void onAboutClick() {                 // Display About dialog
         JLabel logo = null;
         try {
@@ -177,6 +239,7 @@ public class MainWin extends JFrame {
             logo = new JLabel(new ImageIcon(myPicture));
         } catch(IOException e) {
         }
+        
         
         JLabel title = new JLabel("<html>"
           + "<p><font size=+4>Nim</font></p>"
@@ -199,14 +262,14 @@ public class MainWin extends JFrame {
              JOptionPane.PLAIN_MESSAGE
          );
      }
+   
 
-/*
     // This is an alternate About dialog using JDialog instead of JOptionPane
     
     protected void onAboutClick() {                 // Display About dialog
         JDialog about = new JDialog();
         about.setLayout(new FlowLayout());
-        about.setTitle("The Game of Nim");
+        about.setTitle("Welcome to Elsa");
         
         try {
             BufferedImage myPicture = ImageIO.read(new File("128px-Pyramidal_matches.png"));
@@ -238,58 +301,17 @@ public class MainWin extends JFrame {
         about.setSize(450,400);
         about.setVisible(true);
      }
-*/
-    protected void onQuitClick() {System.exit(0);}   // Exit the game
 
-    private void setSticks() {              // Update display, robot move
-        // s collects the status message
-        String s = "";
+     
+   
         
-        // If the robot is enabled and it's their turn, move the robot
-        if(nim.sticksLeft() > 0) {
-            if(computerPlayer.isSelected() && nim.currentPlayer() == 2) {
-                int move = 1;
-                try {
-                    move = nim.optimalMove();
-                } catch(Exception e) {
-                    System.err.println("Invalid optimal move: " + e.getMessage());
-                }
-                s += "Robot plays " + move + ", ";
-                nim.takeSticks(move);
-            }
-        }
-        
-        // Report who's turn it is, or (if all sticks gone) who won
-        
-        if (nim.sticksLeft() > 0) {
-            s += "Player " + nim.currentPlayer() + "'s turn";
-        } else {
-            s += "Player " + nim.currentPlayer() +  " wins!";
-            msg.setFont(new Font("SansSerif", Font.BOLD, 18));
-        }
-        
-        // Display the collected status on the status bar
-        msg.setText(s);
-
-        // Update the visual display of sticks
-        s = "";
-        for(int i=0; i<nim.sticksLeft(); ++i) s += ("| ");
-        s += "  (" + (nim.sticksLeft()) + " sticks)";
-        sticks.setText(s);
-
-        // Set sensitivity of the human stick selectors so user can't make an illegal move
-        button1.setEnabled(nim.sticksLeft() > 0);
-        button2.setEnabled(nim.sticksLeft() > 1);
-        button3.setEnabled(nim.sticksLeft() > 2);
-    }
     
-    private Nim nim;
-    
-    private JLabel sticks;                  // Display of sticks on game board
-    private JLabel msg;                     // Status message display
-    private JButton button1;                // Button to select 1 stick
-    private JButton button2;                // Button to select 2 sticks
-    private JButton button3;                // Button to select 3 sticks
-    private JToggleButton computerPlayer;   // Button to enable robot
+   
+  // private JLabel sticks;                // Display of sticks on game board
+   private JLabel msg;                     // Status message display
+  // private JButton button1;                // Button to select 1 stick
+  // private JButton button2;                // Button to select 2 sticks
+  // private JButton button3;                // Button to select 3 sticks
+   //private JToggleButton computerPlayer;   // Button to enable robot
 
 }

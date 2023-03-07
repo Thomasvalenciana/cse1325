@@ -1,0 +1,3 @@
+ enum Record{
+COMPUTER, ORDER, CUSTOMER, OPTION
+};
