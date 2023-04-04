@@ -3,19 +3,16 @@
 
 int main(int argc, char*argv[])
 {
-  std::string previous;
-  
+  std::string m1;
   for (int k =1; k < argc; k++)
   {
-    std::string current= argv[k];
-	if(current !=previous)
+    std::string m2= argv[k];
+	if(m2 !=m1)
     {
-	  std::cout << current<< " ";
-     previous=current;
-	 
+	  std::cout << m2<< " ";
+      m1=m2;
 	}	
   }
-  std::cout<<std::endl;
- 
-
+    std::cout<<std::endl;
+    return 0;
 };
