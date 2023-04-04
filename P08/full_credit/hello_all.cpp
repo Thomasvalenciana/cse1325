@@ -6,7 +6,6 @@ int main()
   std::cout<<" What's your name? ";
   std::getline(std::cin, name);
   std::cout<<"Hello, "<<name<<"!"<<std::endl;
-  
- 
+  return 0;
   
 }
