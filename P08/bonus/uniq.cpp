@@ -9,8 +9,8 @@ int main(int argc, char*argv[])
     std::string m2= argv[k];
 	if(m2 !=m1)
     {
-	  std::cout << m2<< " ";
-      m1=m2;
+	    std::cout << m2<< " ";
+        m1=m2;
 	}	
   }
     std::cout<<std::endl;
