@@ -501,42 +501,42 @@ public class MainWin extends JFrame {
           SwingConstants.CENTER);
 
         JLabel artists = new JLabel("<html>"
-          + "<br/><p>Copyright 2017-2023 by George F. Rice</p>"
+          + "<br/><p>Copyright 2017-2023 by George F.</p>"
+          + "<br/><p>Copyright 2023 Thomas S. Valenciana</p>"
           + "<p>Licensed under Gnu GPL 3.0</p><br/>"
-
-          + "<br/><p>Logo based on work by Clker-Free-Vector-Images per the Pixabay License</p>"
-          + "<p><font size=-2>https://pixabay.com/vectors/internet-www-mouse-web-business-42583</font></p>"
           
-          + "<br/><p>Add Customer icon based on work by Dreamstate per the Flaticon License</p>"
-          + "<p><font size=-2>https://www.flaticon.com/free-icon/user_3114957</font></p>"
+          + "<br/><p>Add Customer icon based on work by created by Freepik per the Flaticon License</p>"
+          + "<p><font size=-2>https://www.flaticon.com/free-icon/add-friend_9301510</font></p>"
 
-          + "<br/><p>View Customers icon based on work by Ilham Fitrotul Hayat per the Flaticon License</p>"
-          + "<p><font size=-2>https://www.flaticon.com/free-icon/group_694642</font></p>"
+          + "<br/><p>View Customers icon based on work by created by Freepik per the Flaticon License</p>"
+          + "<p><font size=-2>https://www.flaticon.com/free-icon/diversity_8034509</font></p>"
 
-          + "<br/><p>Add and View Options icons based on work by Freepik per the Flaticon License</p>"
-          + "<p><font size=-2>https://www.flaticon.com/free-icon/quantum-computing_4103999</font></p>"
-          + "<p><font size=-2>https://www.flaticon.com/free-icon/edge_8002173</font></p>"
+          + "<br/><p>Add Option icon based on work by Freepik per the Flaticon License</p>"
+          + "<p><font size=-2>https://www.flaticon.com/free-icon/request_1420339</font></p>"
 
-          + "<br/><p>Add Computer icon based on work by Freepik per the Flaticon License</p>"
-          + "<p><font size=-2>https://www.flaticon.com/free-icon/laptop_689396</font></p>"
+          + "<br/><p>View Options icon based on work by Freepik per the FlaticonLicense</p>"
+          + "<p><font size=-2>https://www.flaticon.com/free-icon/choice_1041923</font></p>"
 
+          + "<br/><p>Add Computer icon based on work by Freepik per License</p>"
+          + "<p><font size=-2>https://www.flaticon.com/free-icon/computer_7984438</font></p>"
+  
+          + "<br/><p>open icon based on work  bySmashicons per the Flaticon License</p>"
+          + "<p><font size=-2>https://www.flaticon.com/free-icon/add-file_1151197</font></p>"
+          
+          + "<br/><p>save icon based on work by  the Flaticon per the FlaticonLicense</p>"
+          + "<p><font size=-2>https://www.flaticon.com/free-icon/save_5234222</font></p>"
+          
+          + "<br/><p>saveAs icon based on work by the Flaticon per the FlaticonLicense</p>"
+          + "<p><font size=-2>https://www.flaticon.com/free-icon/save_4371273</font></p>"
+            
+          + "<br/><p>newFile icon based on work  per Smashicons per the FlaticonLicense</p>"
+          + "<p><font size=-2>https://www.flaticon.com/free-icon/save_4371273</font></p>"
+  
           + "<br/><p>View Computers icon based on work by Futuer per the Flaticon License</p>"
-          + "<p><font size=-2>https://www.flaticon.com/free-icon/computer-networks_9672993</font></p>"
+          + "<p><font size=-2>https://www.flaticon.com/free-icon/network_1081950</font></p>"
  
-          + "<br/><p>Add Order icon based on work by Kiranshastry per the Flaticon License</p>"
-          + "<p><font size=-2>https://www.flaticon.com/free-icon/shopping-cart_711897</font></p>"
-
-          + "<br/><p>View Orders icon based on work by Freepik per the Flaticon License</p>"
-          + "<p><font size=-2>https://www.flaticon.com/free-icon/to-do-list_1950715</font></p>"
- 
-
-          + "<br/><p>New and open icon based on work by IconKanan per the Flaticon License</p>"
-          + "<p><font size=-2>https://www.flaticon.com/free-icon/share_2901214</font></p>"
-
-          + "<br/><p>Save and Save As icons based on work by mavadee per the Flaticon License</p>"
-          + "<p><font size=-2>https://www.flaticon.com/free-icon/download_3580085</font></p>"
-
           + "</html>");
+          
           
         JOptionPane.showMessageDialog(this, 
             new Object[]{logo, title, subtitle, version, artists},
