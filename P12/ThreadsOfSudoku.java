@@ -29,11 +29,11 @@ public class ThreadsOfSudoku {
             
             Thread [] threads = new Thread [numThreads];
             
-            int puzzlesPerThread =suds.length/numThreads;
+            int puzzlesP_Thread =suds.length/numThreads;
             int first =0;
             for(int i=0; i< numThreads; i++)
             {
-              int last = first+puzzlesPerThread-1;
+              int last = first+puzzlesP_Thread-1;
               if (i== numThreads -1) last = suds.length -1;
               threads[i] =new Thread(new SudokuSolver(first, last,  i+1));
               threads[i].start();
@@ -83,6 +83,10 @@ public class ThreadsOfSudoku {
     
     
     // WORK HERE
+     public void run()
+    {
+      solveSuds(first, last, id);
+    }
     
     // Be sure to protect the solutions ArrayList from Thread Interference!
     private static void solveSuds(int first, int last, int id) {
@@ -98,10 +102,7 @@ public class ThreadsOfSudoku {
     }
     
     
-    public void run()
-    {
-      solveSuds(first, last, id);
-    }
+    
     }
     // END WORK HERE
     
