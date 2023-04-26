@@ -153,8 +153,9 @@ sys	0m0.137s
 QUESTION 3: Does adding more threads continue to speed up the program? Do more threads ever slow down the program slightly?  Why or why not?
 
 
-Adding more threads has made the program slower.
-The puzzle that I am using 13_zeros it has only shown to slow it down the more threads you add to the program.
+Adding more threads has made the program slower but also  increased the  time and speed  in some .
+The puzzle that I am using 13_zeros it has  shown to slow it down  on some and speed up in others and for others like thread 12 have slowed it down
+by a lot.
 
 
 
@@ -165,7 +166,8 @@ The puzzle that I am using 13_zeros it has only shown to slow it down the more t
 QUESTION 4: Does adding more threads increase the "system load", or is it constant regardless of the number of threads?  Why?
 
 
-Adding threads to puzzle 13_zeros does increase the system load it is not constant it is slighty incleasing as the user adds threads.
+Adding threads to puzzle 13_zeros  decreasing  the system load it is not constant. In the beginning it was decreasing and increasing system load, but towards end 
+it just  decreasing the seconds as the user adds threads.
 
 
 
