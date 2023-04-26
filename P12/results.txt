@@ -167,7 +167,7 @@ QUESTION 4: Does adding more threads increase the "system load", or is it consta
 
 
 Adding threads to puzzle 13_zeros  decreasing  the system load it is not constant. In the beginning it was decreasing and increasing system load, but towards end 
-it just  decreasing the seconds as the user adds threads.
+it just  decreasing the seconds  and ended with increasing as the user adds threads.
 
 
 
