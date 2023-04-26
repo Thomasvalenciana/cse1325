@@ -1,0 +1,80 @@
+
+
+5 3 0 0 7 0 0 0 0
+6 0 2 1 9 5 3 4 8
+1 9 8 3 4 2 5 6 7
+8 5 9 7 6 1 4 2 3
+4 2 6 8 5 3 7 9 1
+7 1 3 9 2 4 8 5 6
+9 6 1 5 3 7 2 8 4
+2 8 7 4 1 9 6 3 5
+0 0 0 0 8 0 0 7 9
+
+
+
+Thread 4 will solve 30 to 39
+Thread 6 will solve 50 to 59
+Thread 2 will solve 10 to 19
+Thread 2 solving 10
+Thread 5 will solve 40 to 49
+Thread 5 solving 40
+Thread 3 will solve 20 to 29
+Thread 3 solving 20
+Thread 1 will solve 0 to 9
+Thread 1 solving 0
+Thread 7 will solve 60 to 69
+Thread 7 solving 60
+Thread 7 solving 61
+Thread 7 solving 62
+Thread 7 solving 63
+Thread 6 solving 50
+Thread 8 will solve 70 to 80
+Thread 8 solving 70
+Thread 8 solving 71
+Thread 8 solving 72
+Thread 4 solving 30
+Thread 3 solving 21
+Thread 4 solving 31
+Thread 4 solving 32
+Thread 4 solving 33
+Thread 4 solving 34
+Thread 4 solving 35
+Thread 4 solving 36
+Thread 3 solving 22
+Thread 6 solving 51
+Thread 6 solving 52
+Thread 6 solving 53
+Thread 6 solving 54
+Thread 5 solving 41
+Thread 1 solving 1
+Thread 8 solving 73
+Thread 7 solving 64
+Thread 2 solving 11
+Thread 2 solving 12
+Thread 4 solving 37
+Thread 3 solving 23
+Thread 2 solving 13
+Thread 6 solving 55
+Thread 5 solving 42
+Thread 5 solving 43
+Thread 5 solving 44
+Thread 5 solving 45
+Thread 7 solving 65
+Thread 7 solving 66
+Thread 8 solving 74
+Thread 8 solving 75
+Thread 1 solving 2
+Thread 1 solving 3
+Thread 3 solving 24
+Thread 3 solving 25
+Thread 3 solving 26
+Thread 3 solving 27
+Thread 3 solving 28
+Thread 4 solving 38
+Thread 4 solving 39
+Thread 2 solving 14
+Thread 7 solving 67
+Thread 1 solving 4
+Thread 3 solving 29
+Thread 8 solving 76
+Thread 5 solving 46

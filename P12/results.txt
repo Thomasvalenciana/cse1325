@@ -1,0 +1,194 @@
+====================
+HOMEWORK P12 RESULTS
+====================
+
+Spring 2023
+
+NOTE: We will not be grading for "correct" answers, since your results may vary, but rather answers that are consistent with your measured results.
+
+IMPORTANT: If at all possible, time your program on a machine with at least 4 cores. (CSE VM may be configured to use multiple cores in the VirtualBox properties panel.)
+
+FULL CREDIT
+===========
+
+QUESTION 1: Which puzzle did you use as ThreadsOfSudoku's parameter to achieve a 30+ second runtime (using "real"): 
+
+I used puzzle 13_zeros with 5 cores program ended in  44 seconds.
+
+
+
+
+
+
+QUESTION 2: Provide the full ``time`` output for your program, with 1 to 16 threads. It may prove interesting to screenshot your system monitor while these run. You may be able to run all of these with a single bash command if you like (replace 14_zeros with your puzzle from QUESTION 1): 
+
+for i in {1..16} ; do printf "\n Threads %d:\n" $i ; time (java ThreadsOfSudoku $i puzzle.txt 14_zeros > temp.txt) ; done
+
+Example Timing (first 2 of 16 runs only on Antares):
+
+ricegf@antares$ for i in {1..16} ; do printf "\n Threads %d:\n" $i ; time (java ThreadsOfSudoku $i puzzle.txt 14_zeros > temp.txt) ; done
+
+ Threads 1:
+
+real	2m0.684s
+user	2m0.919s
+sys	0m0.292s
+
+ Threads 2:
+
+real	1m4.553s
+user	2m7.003s
+sys	0m0.252s
+
+
+
+YOUR Timing:
+
+student@Maverick:~/cse1325/P12/baseline$ for i in {1..16} ; do printf "\n Threads %d:\n" $i ; time (java ThreadsOfSudoku $i puzzle.txt 13_zeros > temp.txt) ; done
+
+ Threads 1:
+
+real	1m34.042s
+user	0m44.278s
+sys	0m0.269s
+
+ Threads 2:
+
+real	2m13.488s
+user	1m2.843s
+sys	0m0.754s
+
+ Threads 3:
+
+real	1m30.441s
+user	0m44.280s
+sys	0m0.132s
+
+ Threads 4:
+
+real	1m31.833s
+user	0m44.668s
+sys	0m0.138s
+
+ Threads 5:
+
+real	1m30.496s
+user	0m43.979s
+sys	0m0.160s
+
+ Threads 6:
+
+real	1m26.480s
+user	0m42.354s
+sys	0m0.120s
+
+ Threads 7:
+
+real	1m29.638s
+user	0m43.631s
+sys	0m0.144s
+
+ Threads 8:
+
+real	1m35.465s
+user	0m46.435s
+sys	0m0.160s
+
+ Threads 9:
+
+real	1m33.411s
+user	0m45.652s
+sys	0m0.145s
+
+ Threads 10:
+
+real	1m30.483s
+user	0m44.354s
+sys	0m0.136s
+
+ Threads 11:
+
+real	1m30.150s
+user	0m44.058s
+sys	0m0.111s
+
+ Threads 12:
+
+real	4m33.601s
+user	0m46.591s
+sys	0m0.167s
+
+ Threads 13:
+
+real	1m27.642s
+user	0m42.896s
+sys	0m0.140s
+
+ Threads 14:
+
+real	1m34.406s
+user	0m46.268s
+sys	0m0.115s
+
+ Threads 15:
+
+real	1m27.758s
+user	0m43.036s
+sys	0m0.128s
+
+ Threads 16:
+
+real	1m29.000s
+user	0m43.625s
+sys	0m0.137s
+
+
+
+
+
+
+
+
+
+QUESTION 3: Does adding more threads continue to speed up the program? Do more threads ever slow down the program slightly?  Why or why not?
+
+
+Adding more threads has made the program slower.
+The puzzle that I am using 13_zeros it has only shown to slow it down the more threads you add to the program.
+
+
+
+
+
+
+
+QUESTION 4: Does adding more threads increase the "system load", or is it constant regardless of the number of threads?  Why?
+
+
+Adding threads to puzzle 13_zeros does increase the system load it is not constant it is slighty incleasing as the user adds threads.
+
+
+
+
+
+
+
+
+
+BONUS
+=====
+
+QUESTION 5: Time your thread pool version of ThreadsOfSudoku as you did for the full credit version. Post your timings here.
+
+YOUR Timing:
+
+
+
+
+QUESTION 6: Is a thread pool faster, slower, or roughly equivalent in performance? 
+
+
+
+QUESTION 7: Compare the full credit and bonus solution code. Which do you believe is more supportable over a long lifetime of evolving hardware and environments?
+
+
